@@ -10,7 +10,7 @@ publish: extract.png animation.gif
 	scp extract.png cloudsdale.tablix.org:public_html/elektro.png
 	scp animation.gif cloudsdale.tablix.org:public_html/elektro_anim.gif
 
-anim/out: anim.py
+anim/out: anim.py anim/label.png
 	rm -r anim/out
 	mkdir anim/out
 	python anim.py
