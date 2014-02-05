@@ -8,7 +8,7 @@ import time
 import os.path
 import sys
 
-from PIL import Image
+from PIL import Image, ImageFont, ImageDraw
 
 SIZE=None
 
@@ -83,7 +83,7 @@ slides = load_slides()
 rows = []
 
 for path in glob.glob("scrape/*aspx*"):
-#for path in glob.glob("scrape/2200--*aspx*"):
+#for path in glob.glob("scrape/2000--*aspx*"):
 	n = None
 	tn = None
 	ltn = None
@@ -117,13 +117,16 @@ for path in glob.glob("scrape/*aspx*"):
 
 rows.sort()
 
-#f = rows[1]
-#rows = [ (f[0] - datetime.timedelta(seconds=3600*12), {'b':0}) ] + rows[1:]
+f = rows[1]
+rows = [ (f[0] - datetime.timedelta(seconds=3600*12), {'b':0}) ] + rows[1:]
 
 prev_t = None
 prev_im = None
 
 cur_t = None
+
+font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeSans.ttf", 14)
+label = Image.open("anim/label.png")
 
 for dt, obmocja in rows:
 	if not obmocja:
@@ -136,6 +139,14 @@ for dt, obmocja in rows:
 	if cur_t is not None:
 		while cur_t < t:
 			im2 = Image.blend(prev_im, im, 1.0 - (t - cur_t)/(t - prev_t))
+
+			cur_dt = datetime.datetime.fromtimestamp(cur_t+3600.0)
+
+			draw = ImageDraw.Draw(im2)
+			draw.text((0, 0), str(cur_dt), (0, 0, 0), font=font)
+
+			im2 = Image.composite(label, im2, label)
+
 			im2.save("anim/out/out-%d.png" % cur_t)
 		
 			cur_t += 1800
