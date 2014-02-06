@@ -24,19 +24,19 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="418.71429"
-     inkscape:cy="291.14286"
+     inkscape:cx="275.33981"
+     inkscape:cy="289.14286"
      inkscape:document-units="px"
      inkscape:current-layer="layer3"
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
      borderlayer="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1143"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="979"
+     inkscape:window-height="999"
+     inkscape:window-x="144"
+     inkscape:window-y="100"
+     inkscape:window-maximized="0" />
   <defs
      id="defs4">
     <marker
@@ -103,7 +103,7 @@
          style="stop-color:#c80000;stop-opacity:1;" />
     </linearGradient>
     <linearGradient
-       gradientTransform="matrix(1,0,0,0.39534884,0,848.87381)"
+       gradientTransform="matrix(1,0,0,0.39534884,0,820.87381)"
        gradientUnits="userSpaceOnUse"
        y2="475.5"
        x2="216"
@@ -744,7 +744,7 @@
          x="110.55054"
          y="668.16217">mesto</tspan></text>
     <rect
-       y="1028.3622"
+       y="1000.3622"
        x="13"
        height="17"
        width="203"
@@ -753,11 +753,11 @@
     <text
        sodipodi:linespacing="125%"
        id="text4078-3"
-       y="1020.0402"
+       y="992.04022"
        x="8.0283813"
        style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
        xml:space="preserve"><tspan
-         y="1020.0402"
+         y="992.04022"
          x="8.0283813"
          id="tspan4080-2"
          sodipodi:role="line">0</tspan></text>
@@ -765,29 +765,40 @@
        xml:space="preserve"
        style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
        x="200.02838"
-       y="1020.0402"
+       y="992.04022"
        id="text3900"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3902"
          x="200.02838"
-         y="1020.0402">&gt;200</tspan></text>
+         y="992.04022">&gt;200</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
        x="70.890648"
-       y="1020.0402"
+       y="992.04022"
        id="text3900-8"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3902-6"
          x="70.890648"
-         y="1020.0402">št. izpadlih TP</tspan></text>
+         y="992.04022">št. izpadlih TP</tspan></text>
     <path
        inkscape:connector-curvature="0"
        id="path3102"
        d="m 146.5,671.86218 7.5,14"
        style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow2Mend)"
        sodipodi:nodetypes="cc" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3121"
+       y="1046.0403"
+       x="8.8906479"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+       xml:space="preserve"><tspan
+         y="1046.0403"
+         x="8.8906479"
+         id="tspan3123"
+         sodipodi:role="line">Vizualizacija: Tomaž Šolc, Vir podatkov: Elektro Ljubljana</tspan></text>
   </g>
 </svg>
