@@ -16,6 +16,6 @@ anim/out: anim.py anim/label.png scrape
 	python anim.py
 
 animation.gif: anim/out
-	convert -delay 10 -loop 0 anim/out/*.png $@
+	convert -delay 10 -loop 0 `ls anim/out/*.png|head -n -1` -delay 400 `ls anim/out/*.png|tail -n1` $@
 
 .PHONY: publish
