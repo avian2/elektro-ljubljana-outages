@@ -32,7 +32,7 @@ for path in glob.glob("scrape/*aspx*"):
 			n = n.replace('.', '')
 			n = int(n)
 
-		g = re.search('<p>.*[^0-9]([0-9.]+) transformatorskih', line)
+		g = re.search('<p.*[^0-9]([0-9.]+)(?:</?strong>| )+transformatorskih', line)
 		if g:
 			tn = g.group(1)
 			tn = tn.replace('.', '')
