@@ -19,14 +19,14 @@ for path in glob.glob("scrape/*aspx*"):
 			day = int(g.group(1))
 			month = int(g.group(2))
 
-		g = re.search('<h2>([0-9]+):([0-9]+) - Motena oskrba', line)
+		g = re.search('<h2>([0-9]+)[.:]([0-9]+) - [Mm]otena oskrba', line)
 		if g:
 			hour = int(g.group(1))
 			minute = int(g.group(2))
 
 			dt = datetime.datetime(2014, month, day, hour, minute)
 
-		g = re.search('([0-9.]+) odjemalcih', line)
+		g = re.search('([0-9.]+)(?:</?strong>| )+odjemalcih', line)
 		if g:
 			n = g.group(1)
 			n = n.replace('.', '')
@@ -44,10 +44,11 @@ for path in glob.glob("scrape/*aspx*"):
 			ltn = ltn.replace('.', '')
 			ltn = int(ltn)
 
-	rows.append((dt, n, tn, ltn))
+	rows.append((dt, n, tn, ltn, path))
 
 
 rows.sort()
 
-for dt, n, tn, ltn in rows:
+for dt, n, tn, ltn, path in rows:
+	#print path
 	print( time.mktime(dt.timetuple())+3600.0, n, tn, ltn)

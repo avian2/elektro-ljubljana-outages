@@ -98,7 +98,7 @@ for path in glob.glob("scrape/*aspx*"):
 			day = int(g.group(1))
 			month = int(g.group(2))
 
-		g = re.search('<h2>([0-9]+):([0-9]+) - Motena oskrba', line)
+		g = re.search('<h2>([0-9]+)[:.]([0-9]+) - [mM]otena oskrba', line)
 		if g:
 			hour = int(g.group(1))
 			minute = int(g.group(2))
@@ -143,7 +143,7 @@ for dt, obmocja in rows:
 			cur_dt = datetime.datetime.fromtimestamp(cur_t+3600.0)
 
 			draw = ImageDraw.Draw(im2)
-			draw.text((0, 0), str(cur_dt), (0, 0, 0), font=font)
+			draw.text((7, 2), str(cur_dt), (0, 0, 0), font=font)
 
 			im2 = Image.composite(label, im2, label)
 
