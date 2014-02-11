@@ -53,6 +53,8 @@ for path in glob.glob("scrape/*aspx*"):
 			'tp_brez_napetosti': {},
 	}
 
+	start_list = False
+
 	for line in open(path):
 
 		g = re.search('<p class="Datum">([0-9]+).([0-9]+).2014</p>', line)
@@ -79,10 +81,12 @@ for path in glob.glob("scrape/*aspx*"):
 			n = g.group(1)
 			n = n.replace('.', '')
 
-			row['tp_brez_napetosti_skupaj'] = int(n)
+			if not start_list:
+				row['tp_brez_napetosti_skupaj'] = int(n)
 
 		g = re.search(' ([^ ]+)(?: |&nbsp;)+([0-9]+)(?: |&nbsp;|TP)+transformatorsk', line)
 		if g:
+			start_list = True
 			obmocje2 = g.group(1).decode('utf8').lower()
 			n = int(g.group(2))
 
