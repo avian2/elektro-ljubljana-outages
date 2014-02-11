@@ -1,16 +1,57 @@
+# -*- coding: utf8 -*-
+import json
 import glob
 import re
+import sys
 
 import datetime
-import time
+
+OBMOCJA = {
+	u'bokalcev':		'bokalci',
+	u'cerknice':		'cerknica',
+	u'cerknice,':		'cerknica',
+	u'črnomelj':		'crnomelj',
+	u'črnomlja':		'crnomelj',
+	u'črnuč':		'crnuce',
+	u'dobrepolja':		'dobrepolje',
+	u'domžal':		'domzale',
+	u'grosuplja':		'grosuplje',
+	u'kamnika':		'kamnik',
+	u'kočevja':		'kocevje',
+	u'litije':		'litija',
+	u'(zapodje)':		'litija',
+	u'logatca':		'logatec',
+	u'mesta':		'novomesto',
+	u'metlika':		'metlika',
+	u'metlike':		'metlika',
+	u'polje':		'polje',
+	u'radeč':		'radece',
+	u'radečah':		'radece',
+	u'ribnice':		'ribnica',
+	u'&scaron;entjerneja':	'sentjernej',
+	u'&scaron;i&scaron;ke':	'siska',
+	u'tacna':		'tacen',
+	u'(vikr\u010de)':	'tacen',
+	u'trbovelj':		'trbovlje',
+	u'trbovlje':		'trbovlje',
+	u'trebnjega':		'trebnje',
+	u'vrhnike':		'vrhnika',
+	u'zagorja':		'zagorje',
+	u'zagradca':		'zagradec',
+	u'zagradec':		'zagradec',
+	u'zajasovnik)':		'zagorje',
+	u'\u017eirov':		'ziri',
+}
 
 rows = []
+a = set()
 
 for path in glob.glob("scrape/*aspx*"):
-	n = None
-	tn = None
-	ltn = None
-	dt = None
+
+	row = {
+			'datoteka': path,
+			'tp_brez_napetosti': {},
+	}
 
 	for line in open(path):
 
@@ -24,32 +65,39 @@ for path in glob.glob("scrape/*aspx*"):
 			hour = int(g.group(1))
 			minute = int(g.group(2))
 
-			dt = datetime.datetime(2014, month, day, hour, minute)
+			row['cas'] = datetime.datetime(2014, month, day, hour, minute).isoformat()
 
 		g = re.search('([0-9.]+)(?:</?strong>| )+odjemalc', line)
 		if g:
 			n = g.group(1)
 			n = n.replace('.', '')
-			n = int(n)
+
+			row['odjemalci_brez_napetosti'] = int(n)
 
 		g = re.search('<p.*[^0-9]([0-9.]+)(?:</?strong>| )+transformatorskih', line)
 		if g:
-			tn = g.group(1)
-			tn = tn.replace('.', '')
-			tn = int(tn)
+			n = g.group(1)
+			n = n.replace('.', '')
 
-		g = re.search('Logatca ([0-9]+) transformatorskih', line)
+			row['tp_brez_napetosti_skupaj'] = int(n)
+
+		g = re.search(' ([^ ]+)(?: |&nbsp;)+([0-9]+)(?: |&nbsp;|TP)+transformatorsk', line)
 		if g:
-			ltn = g.group(1)
-			ltn = ltn.replace('.', '')
-			ltn = int(ltn)
+			obmocje2 = g.group(1).decode('utf8').lower()
+			n = int(g.group(2))
 
-	rows.append((dt, n, tn, ltn, path))
+			obmocje = OBMOCJA.get(obmocje2)
+			if obmocje is None:
+				if obmocje2 not in a:
+					print '\t%r:\t\t%r' % (obmocje2, obmocje2)
+					a.add(obmocje2)
+			else:
+				row['tp_brez_napetosti'][obmocje] = n
 
+	rows.append(row)
 
-rows.sort()
+rows.sort(key=lambda x:x['cas'])
 
-for dt, n, tn, ltn, path in rows:
-	print( "#", path)
-	print( "#", dt)
-	print( time.mktime(dt.timetuple())+3600.0, n, tn, ltn)
+json.dump(rows, open(sys.argv[1], 'w'), indent=4)
+
+#print( time.mktime(dt.timetuple())+3600.0, n, tn, ltn)

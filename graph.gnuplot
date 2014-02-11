@@ -157,10 +157,10 @@ set fit noerrorvariables
 GNUTERM = "wxt"
 
 set term png size 1024,768
-set output "extract.png"
+set output "graph.png"
 
-plot "./extract.csv" using 1:($2/1000) with linespoints title "odjemalci (x1000)", \
-"./extract.csv" using 1:($3/10) with linespoints title "transformatorske postaje (x10)", \
-"./extract.csv" using 1:4 with linespoints title "transformatorske postaje (Logatec)"
+plot "./graph.csv" using 1:($2/1000) with linespoints title "odjemalci (x1000)", \
+"./graph.csv" using 1:($3/10) with linespoints title "transformatorske postaje (x10)", \
+"./graph.csv" using 1:4 with linespoints title "transformatorske postaje (Logatec)"
 #    EOF
 #

@@ -1,6 +1,6 @@
 # -*- coding: utf8 -*-
 import glob
-import re
+import json
 
 import datetime
 import time
@@ -12,39 +12,6 @@ from PIL import Image, ImageFont, ImageDraw
 
 SIZE=None
 VIDEO_SIZE=(1280, 720)
-
-OBMOCJA = {
-	'ribnice': 'ribnica',
-	'logatca': 'logatec',
-	'vrhnike': 'vrhnika',
-	'litije': 'litija',
-	'zagorja': 'zagorje',
-	'kamnika': 'kamnik',
-	u'črnomlja': 'crnomelj',
-	u'črnomelj': 'crnomelj',
-	'cerknice': 'cerknica',
-	'cerknice,': 'cerknica',
-	u'domžal': 'domzale',
-	u'kočevja': 'kocevje',
-	u'radeč': 'radece',
-	u'radečah': 'radece',
-	'dobrepolja': 'dobrepolje',
-	'trebnjega': 'trebnje',
-	'zagradca': 'zagradec',
-	u'črnuč': 'crnuce',
-	'metlike': 'metlika',
-	'&scaron;entjerneja': 'sentjernej',
-	'grosuplja': 'grosuplje',
-	'bokalcev': 'bokalci',
-	'tacna': 'tacen',
-	u'(vikr\u010de)': 'tacen',
-	'zajasovnik)': 'zagorje',
-	u'\u017eirov': 'ziri',
-	'&scaron;i&scaron;ke': 'siska',
-	'trbovelj': 'trbovlje',
-	'mesta': 'novomesto',
-	'(zapodje)': 'litija',
-}
 
 def load_slides():
 	global SIZE
@@ -81,46 +48,13 @@ def composite(slides, obmocja):
 	return im
 
 slides = load_slides()
+rows = json.load(open("extract.json"))
+for row in rows:
+	row['cas'] = datetime.datetime(*time.strptime(row['cas'], "%Y-%m-%dT%H:%M:%S")[:6])
 
-rows = []
-
-for path in glob.glob("scrape/*aspx*"):
-#for path in glob.glob("scrape/2000--*aspx*"):
-	n = None
-	tn = None
-	ltn = None
-	dt = None
-
-	obmocja = {}
-
-	for line in open(path):
-
-		g = re.search('<p class="Datum">([0-9]+).([0-9]+).2014</p>', line)
-		if g:
-			day = int(g.group(1))
-			month = int(g.group(2))
-
-		g = re.search('<h2>([0-9]+)[:.]([0-9]+) - [mM]otena oskrba', line)
-		if g:
-			hour = int(g.group(1))
-			minute = int(g.group(2))
-
-			dt = datetime.datetime(2014, month, day, hour, minute)
-
-		g = re.search(' ([^ ]+)(?: |&nbsp;)+([0-9]+)(?: |&nbsp;|TP)+transformatorsk', line)
-		if g:
-			obmocje2 = g.group(1).decode('utf8').lower()
-			n = int(g.group(2))
-
-			obmocje = OBMOCJA.get(obmocje2, obmocje2)
-			obmocja[obmocje] = n
-
-	rows.append((dt, obmocja))
-
-rows.sort()
-
-f = rows[1]
-rows = [ (f[0] - datetime.timedelta(seconds=3600*12), {'b':0}) ] + rows[1:]
+frow = dict(rows[0])
+frow['cas'] -= datetime.timedelta(seconds=3600*12)
+rows = [ frow ] + rows
 
 prev_t = None
 prev_im = None
@@ -138,12 +72,13 @@ offset = (
 	)
 
 cur_n = 0
-for dt, obmocja in rows:
+for row in rows:
+	obmocja = row['tp_brez_napetosti']
 	if not obmocja:
 		print "x"
 		continue
 
-	t = time.mktime(dt.timetuple())
+	t = time.mktime(row['cas'].timetuple())
 	im = composite(slides, obmocja)
 
 	if cur_t is not None:
@@ -169,3 +104,7 @@ for dt, obmocja in rows:
 
 	prev_t = t
 	prev_im = im
+
+for n in xrange(40):
+	canvas.save("anim/out/out-%04d.png" % cur_n)
+	cur_n += 1

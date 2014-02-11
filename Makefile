@@ -1,13 +1,16 @@
 all: publish
 
-extract.csv: scrape extract.py
-	python3 extract.py > extract.csv
+extract.json: scrape extract.py
+	python extract.py $@
 
-extract.png: extract.csv extract.gnuplot
-	gnuplot extract.gnuplot
+graph.csv: extract.json graph.py
+	python graph.py > $@
 
-publish: extract.png animation.mp4
-	scp extract.png cloudsdale.tablix.org:public_html/elektro.png
+graph.png: graph.csv graph.gnuplot
+	gnuplot graph.gnuplot
+
+publish: graph.png animation.mp4
+	scp graph.png cloudsdale.tablix.org:public_html/elektro.png
 	scp animation.mp4 cloudsdale.tablix.org:public_html/elektro_anim.mp4
 
 anim/out: anim.py anim/label.png scrape
