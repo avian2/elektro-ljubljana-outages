@@ -11,6 +11,7 @@ import sys
 from PIL import Image, ImageFont, ImageDraw
 
 SIZE=None
+VIDEO_SIZE=(1280, 720)
 
 OBMOCJA = {
 	'ribnice': 'ribnica',
@@ -20,6 +21,7 @@ OBMOCJA = {
 	'zagorja': 'zagorje',
 	'kamnika': 'kamnik',
 	u'črnomlja': 'crnomelj',
+	u'črnomelj': 'crnomelj',
 	'cerknice': 'cerknica',
 	'cerknice,': 'cerknica',
 	u'domžal': 'domzale',
@@ -128,6 +130,14 @@ cur_t = None
 font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeSans.ttf", 14)
 label = Image.open("anim/label.png")
 
+canvas = Image.new("RGB", VIDEO_SIZE, "white")
+
+offset = (
+		(VIDEO_SIZE[0] - SIZE[0])/2,
+		(VIDEO_SIZE[1] - SIZE[1])/2,
+	)
+
+cur_n = 0
 for dt, obmocja in rows:
 	if not obmocja:
 		print "x"
@@ -147,7 +157,11 @@ for dt, obmocja in rows:
 
 			im2 = Image.composite(label, im2, label)
 
-			im2.save("anim/out/out-%d.png" % cur_t)
+			canvas.paste(im2, offset)
+
+			canvas.save("anim/out/out-%04d.png" % cur_n)
+			cur_n += 1
+
 		
 			cur_t += 1800
 	else:
