@@ -166,7 +166,7 @@ set output "graph.png"
 #"./graph.csv" using 1:4 with linespoints title "transformatorske postaje (Logatec)"
 
 plot "./graph.csv" using 1:($2/1000) with linespoints title "clients (x1000)", \
-"./graph.csv" using 1:($3/10) with linespoints title "substations (x10)", \
-"./graph.csv" using 1:4 with linespoints title "substations (Logatec region)"
+"./graph.csv" using 1:($3/10) with linespoints title "transformer stations (x10)", \
+"./graph.csv" using 1:4 with linespoints title "transformer stations (Logatec region)"
 
 #
