@@ -109,7 +109,8 @@ set cbtics border in scale 1,0.5 mirror norotate  offset character 0, 0, 0 autoj
 set cbtics autofreq  norangelimit
 set rtics axis in scale 1,0.5 nomirror norotate  offset character 0, 0, 0 autojustify
 set rtics autofreq  norangelimit
-set title "Elektro Ljubljana izpadi" 
+#set title "Elektro Ljubljana izpadi" 
+set title "Elektro Ljubljana outages due to glaze ice" 
 set title  offset character 0, 0, 0 font "" norotate
 set timestamp bottom 
 set timestamp "" 
@@ -118,7 +119,8 @@ set rrange [ * : * ] noreverse nowriteback
 set trange [ * : * ] noreverse nowriteback
 set urange [ * : * ] noreverse nowriteback
 set vrange [ * : * ] noreverse nowriteback
-set xlabel "ura" 
+#set xlabel "datum" 
+set xlabel "date" 
 set xlabel  offset character 0, 0, 0 font "" textcolor lt -1 norotate
 set x2label "" 
 set x2label  offset character 0, 0, 0 font "" textcolor lt -1 norotate
@@ -159,8 +161,12 @@ GNUTERM = "wxt"
 set term png size 1024,768
 set output "graph.png"
 
-plot "./graph.csv" using 1:($2/1000) with linespoints title "odjemalci (x1000)", \
-"./graph.csv" using 1:($3/10) with linespoints title "transformatorske postaje (x10)", \
-"./graph.csv" using 1:4 with linespoints title "transformatorske postaje (Logatec)"
-#    EOF
+#plot "./graph.csv" using 1:($2/1000) with linespoints title "odjemalci (x1000)", \
+#"./graph.csv" using 1:($3/10) with linespoints title "transformatorske postaje (x10)", \
+#"./graph.csv" using 1:4 with linespoints title "transformatorske postaje (Logatec)"
+
+plot "./graph.csv" using 1:($2/1000) with linespoints title "clients (x1000)", \
+"./graph.csv" using 1:($3/10) with linespoints title "substations (x10)", \
+"./graph.csv" using 1:4 with linespoints title "substations (Logatec region)"
+
 #
