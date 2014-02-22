@@ -1,0 +1,80 @@
+Data for Elektro Ljubljana outages
+==================================
+
+This repository contains data on electrical substation outages and
+number of clients without electrical power in the first half of February 2014.
+It covers the regions in central and southern Slovenia (including the capital
+Ljubljana) and is based on public reports released by Elektro Ljubljana, the
+electrical distribution company supplying these regions.
+
+In Slovenia in end of January 2014 heavy snow and glaze ice caused wide spread
+damage to electrical distribution network. A power outage because of fallen
+trees and collapsed overhead power lines affected approximately one fifth of
+the population. In some regions it took more than two weeks before emergency
+repairs could be put in place.
+
+Contents:
+
+extract.json - Extracted and cleaned-up data in JSON format.
+
+scrape       - Original reports (some of the files have had HTML markup
+               minimally corrected for easier data extraction)
+
+Makefile     - Contains rules for extracting the JSON file from HTML files and
+	       visualizing the data in a graph and an animation.
+
+License
+=======
+
+In case of further use, please credit Tomaž Šolc <tomaz.solc@tablix.org> for
+data extraction and Elektro Ljubljana (http://www.elektro-ljubljana.si) as the
+source.
+
+
+Copyright for original HTML files is held by Elektro Ljubljana d.d.
+(http://www.elektro-ljubljana.si). Distribution is allowed for personal and
+non-commercial use provided the following notice and disclaimer is preserved:
+
+    Avtorske pravice
+
+	Vse pravice pridržane © 2011 Elektro Ljubljana, d. d. Vse pravice
+	pridržane.  Vse informacije na spletnem mestu so predmet avtorske
+	zaščite ter drugih oblik zaščite intelektualne lastnine. Prepovedano je
+	kakršno koli reproduciranje, razen izključno za osebno uporabo in v
+	nekomercialne namene, pri čemer se morajo ohraniti tudi vsa navedena
+	opozorila o avtorskih ali drugih pravicah, zato se ne smejo
+	prepisovati, razmnoževati ali kako drugače razširjati.
+
+    Omejitev odgovornosti
+
+	Spletna stran www.elektro-ljubljana.si je bila vzpostavljena z namenom
+	obveščanja širše javnosti o produktih in storitvah podjetja Elektro
+	Ljubljana, d. d. Informacije na spletni strani so informativnega
+	značaja, podjetje pa ne prevzema nikakršne odgovornosti za morebitno
+	netočnost in nepopolnost objavljenih podatkov ali za kakršno koli
+	škodo, ki bi bila uporabniku spletnega mesta povzročena zaradi uporabe
+	objavljenih informacij. Vsi uporabniki spletnih strani vso objavljeno
+	vsebino uporabljajo na lastno odgovornost.
+
+	Podjetje Elektro Ljubljana, d. d., bo s skrbnostjo poizkušalo
+	zagotavljati natančnost in ažurnost podatkov. Pridržuje si pravice do
+	spreminjanja, dodajanja ali odstranitve vsebin spletnih strani
+	kadarkoli brez predhodnega opozorila.
+
+
+Copyright and license for code in this repository:
+
+    Copyright (C) 2014  Tomaz Solc <tomaz.solc@tablix.org>
+
+    This program is free software: you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by the Free
+    Software Foundation, either version 3 of the License, or (at your option)
+    any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT
+    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+    more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program.  If not, see <http://www.gnu.org/licenses/>.
