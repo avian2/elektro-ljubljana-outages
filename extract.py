@@ -48,6 +48,9 @@ a = set()
 
 for path in glob.glob("scrape/*aspx*"):
 
+	if path.endswith("Vse-novice.aspx"):
+		continue
+
 	row = {
 			'datoteka': path,
 			'tp_brez_napetosti': {},
@@ -71,17 +74,21 @@ for path in glob.glob("scrape/*aspx*"):
 
 		g = re.search('([0-9.]+)(?:</?strong>| )+odjemalc', line)
 		if g:
+			if '<p>Z agregati' in line:
+				continue
+
 			n = g.group(1)
 			n = n.replace('.', '')
 
-			row['odjemalci_brez_napetosti'] = int(n)
+			if 'odjemalci_brez_napetosti' not in row:
+				row['odjemalci_brez_napetosti'] = int(n)
 
-		g = re.search('<p.*[^0-9]([0-9.]+)(?:</?strong>| )+transformatorskih', line)
+		g = re.search('<p.*[^0-9]([0-9.]+)(?:</?strong>|&nbsp;| )+transformatorskih', line)
 		if g:
 			n = g.group(1)
 			n = n.replace('.', '')
 
-			if not start_list:
+			if not start_list and 'tp_brez_napetosti_skupaj' not in row:
 				row['tp_brez_napetosti_skupaj'] = int(n)
 
 		g = re.search(' ([^ ]+)(?: |&nbsp;)+([0-9]+)(?: |&nbsp;|TP)+transformatorsk', line)
@@ -101,7 +108,6 @@ for path in glob.glob("scrape/*aspx*"):
 	rows.append(row)
 
 rows.sort(key=lambda x:x['cas'])
-
 json.dump(rows, open(sys.argv[1], 'w'), indent=4)
 
 #print( time.mktime(dt.timetuple())+3600.0, n, tn, ltn)

@@ -1,6 +1,6 @@
 import re
 
-fn = "Elektro Ljubljana > Vse novice.html"
+fn = "scrape/Vse-novice.aspx"
 
 for line in open(fn):
 	

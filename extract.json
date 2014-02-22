@@ -3,7 +3,7 @@
         "cas": "2014-01-31T12:00:00", 
         "datoteka": "scrape/1200--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.2", 
         "tp_brez_napetosti": {}, 
-        "odjemalci_brez_napetosti": 360
+        "odjemalci_brez_napetosti": 2840
     }, 
     {
         "cas": "2014-01-31T13:00:00", 
@@ -12,7 +12,7 @@
             "radece": 15, 
             "polje": 7
         }, 
-        "odjemalci_brez_napetosti": 120
+        "odjemalci_brez_napetosti": 1095
     }, 
     {
         "cas": "2014-01-31T14:00:00", 
@@ -43,7 +43,7 @@
             "ziri": 4, 
             "ribnica": 5
         }, 
-        "odjemalci_brez_napetosti": 250
+        "odjemalci_brez_napetosti": 500
     }, 
     {
         "cas": "2014-01-31T20:00:00", 
@@ -56,7 +56,7 @@
             "ziri": 3, 
             "ribnica": 5
         }, 
-        "odjemalci_brez_napetosti": 250
+        "odjemalci_brez_napetosti": 800
     }, 
     {
         "cas": "2014-02-01T08:00:00", 
@@ -1437,5 +1437,334 @@
         }, 
         "odjemalci_brez_napetosti": 5000, 
         "tp_brez_napetosti_skupaj": 257
+    }, 
+    {
+        "cas": "2014-02-12T14:00:00", 
+        "datoteka": "scrape/1400--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.13", 
+        "tp_brez_napetosti": {
+            "dobrepolje": 3, 
+            "logatec": 83, 
+            "vrhnika": 15, 
+            "litija": 1, 
+            "cerknica": 61, 
+            "grosuplje": 1, 
+            "domzale": 1, 
+            "kocevje": 16, 
+            "ziri": 42, 
+            "kamnik": 14, 
+            "ribnica": 6
+        }, 
+        "odjemalci_brez_napetosti": 4500, 
+        "tp_brez_napetosti_skupaj": 243
+    }, 
+    {
+        "cas": "2014-02-12T20:00:00", 
+        "datoteka": "scrape/2000--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.16", 
+        "tp_brez_napetosti": {
+            "dobrepolje": 1, 
+            "logatec": 82, 
+            "vrhnika": 14, 
+            "cerknica": 53, 
+            "domzale": 1, 
+            "kocevje": 15, 
+            "ziri": 37, 
+            "kamnik": 14, 
+            "ribnica": 6
+        }, 
+        "odjemalci_brez_napetosti": 4200, 
+        "tp_brez_napetosti_skupaj": 223
+    }, 
+    {
+        "cas": "2014-02-13T07:00:00", 
+        "datoteka": "scrape/700--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.3", 
+        "tp_brez_napetosti": {
+            "dobrepolje": 2, 
+            "logatec": 82, 
+            "vrhnika": 14, 
+            "cerknica": 47, 
+            "domzale": 2, 
+            "kocevje": 15, 
+            "ziri": 37, 
+            "kamnik": 12, 
+            "ribnica": 6
+        }, 
+        "odjemalci_brez_napetosti": 3500, 
+        "tp_brez_napetosti_skupaj": 217
+    }, 
+    {
+        "cas": "2014-02-13T14:00:00", 
+        "datoteka": "scrape/1400--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.11", 
+        "tp_brez_napetosti": {
+            "logatec": 82, 
+            "vrhnika": 13, 
+            "cerknica": 46, 
+            "domzale": 2, 
+            "kocevje": 15, 
+            "ziri": 39, 
+            "kamnik": 12, 
+            "ribnica": 6
+        }, 
+        "odjemalci_brez_napetosti": 3500, 
+        "tp_brez_napetosti_skupaj": 215
+    }, 
+    {
+        "cas": "2014-02-13T14:00:00", 
+        "datoteka": "scrape/1400--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.12", 
+        "tp_brez_napetosti": {
+            "logatec": 82, 
+            "vrhnika": 13, 
+            "cerknica": 46, 
+            "domzale": 2, 
+            "kocevje": 15, 
+            "ziri": 39, 
+            "kamnik": 12, 
+            "ribnica": 6
+        }, 
+        "odjemalci_brez_napetosti": 3500, 
+        "tp_brez_napetosti_skupaj": 215
+    }, 
+    {
+        "cas": "2014-02-13T20:00:00", 
+        "datoteka": "scrape/2000--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.15", 
+        "tp_brez_napetosti": {
+            "logatec": 74, 
+            "vrhnika": 13, 
+            "cerknica": 33, 
+            "kocevje": 13, 
+            "ziri": 35, 
+            "kamnik": 9, 
+            "ribnica": 3
+        }, 
+        "odjemalci_brez_napetosti": 3000, 
+        "tp_brez_napetosti_skupaj": 177
+    }, 
+    {
+        "cas": "2014-02-14T07:00:00", 
+        "datoteka": "scrape/700--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.2", 
+        "tp_brez_napetosti": {
+            "dobrepolje": 2, 
+            "logatec": 74, 
+            "vrhnika": 24, 
+            "cerknica": 33, 
+            "domzale": 2, 
+            "kocevje": 9, 
+            "ziri": 35, 
+            "kamnik": 12, 
+            "ribnica": 3
+        }, 
+        "odjemalci_brez_napetosti": 3000, 
+        "tp_brez_napetosti_skupaj": 189
+    }, 
+    {
+        "cas": "2014-02-14T14:00:00", 
+        "datoteka": "scrape/1400--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.10", 
+        "tp_brez_napetosti": {
+            "logatec": 74, 
+            "vrhnika": 13, 
+            "cerknica": 33, 
+            "kocevje": 11, 
+            "ziri": 34, 
+            "kamnik": 6, 
+            "ribnica": 2
+        }, 
+        "odjemalci_brez_napetosti": 2800, 
+        "tp_brez_napetosti_skupaj": 173
+    }, 
+    {
+        "cas": "2014-02-14T20:00:00", 
+        "datoteka": "scrape/2000--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.14", 
+        "tp_brez_napetosti": {
+            "logatec": 69, 
+            "vrhnika": 9, 
+            "cerknica": 19, 
+            "kocevje": 28, 
+            "ziri": 20, 
+            "kamnik": 6, 
+            "ribnica": 4
+        }, 
+        "odjemalci_brez_napetosti": 2800, 
+        "tp_brez_napetosti_skupaj": 155
+    }, 
+    {
+        "cas": "2014-02-15T08:00:00", 
+        "datoteka": "scrape/0800--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.6", 
+        "tp_brez_napetosti": {
+            "logatec": 66, 
+            "vrhnika": 9, 
+            "cerknica": 19, 
+            "kocevje": 28, 
+            "ziri": 18, 
+            "kamnik": 6, 
+            "ribnica": 4
+        }, 
+        "odjemalci_brez_napetosti": 1200, 
+        "tp_brez_napetosti_skupaj": 150
+    }, 
+    {
+        "cas": "2014-02-15T21:00:00", 
+        "datoteka": "scrape/2100--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx", 
+        "tp_brez_napetosti": {
+            "logatec": 62, 
+            "vrhnika": 9, 
+            "cerknica": 8, 
+            "kocevje": 28, 
+            "ziri": 12, 
+            "kamnik": 6, 
+            "ribnica": 4
+        }, 
+        "odjemalci_brez_napetosti": 1000, 
+        "tp_brez_napetosti_skupaj": 129
+    }, 
+    {
+        "cas": "2014-02-16T08:00:00", 
+        "datoteka": "scrape/0800--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.5", 
+        "tp_brez_napetosti": {
+            "logatec": 62, 
+            "vrhnika": 9, 
+            "cerknica": 8, 
+            "kocevje": 28, 
+            "ziri": 9, 
+            "kamnik": 6, 
+            "ribnica": 6
+        }, 
+        "odjemalci_brez_napetosti": 1000, 
+        "tp_brez_napetosti_skupaj": 128
+    }, 
+    {
+        "cas": "2014-02-16T20:00:00", 
+        "datoteka": "scrape/2000--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.13", 
+        "tp_brez_napetosti": {
+            "logatec": 62, 
+            "vrhnika": 9, 
+            "cerknica": 9, 
+            "kocevje": 28, 
+            "ziri": 9, 
+            "kamnik": 6, 
+            "ribnica": 6
+        }, 
+        "odjemalci_brez_napetosti": 1000, 
+        "tp_brez_napetosti_skupaj": 129
+    }, 
+    {
+        "cas": "2014-02-17T14:00:00", 
+        "datoteka": "scrape/1400--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.9", 
+        "tp_brez_napetosti": {
+            "vrhnika": 2, 
+            "ziri": 14, 
+            "cerknica": 9, 
+            "logatec": 63
+        }, 
+        "odjemalci_brez_napetosti": 1000, 
+        "tp_brez_napetosti_skupaj": 88
+    }, 
+    {
+        "cas": "2014-02-17T20:00:00", 
+        "datoteka": "scrape/2000--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.12", 
+        "tp_brez_napetosti": {
+            "vrhnika": 2, 
+            "cerknica": 8, 
+            "logatec": 69
+        }, 
+        "odjemalci_brez_napetosti": 1000, 
+        "tp_brez_napetosti_skupaj": 47
+    }, 
+    {
+        "cas": "2014-02-18T14:00:00", 
+        "datoteka": "scrape/1400--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.8", 
+        "tp_brez_napetosti": {
+            "vrhnika": 2, 
+            "cerknica": 8, 
+            "logatec": 56
+        }, 
+        "odjemalci_brez_napetosti": 900, 
+        "tp_brez_napetosti_skupaj": 36
+    }, 
+    {
+        "cas": "2014-02-18T20:00:00", 
+        "datoteka": "scrape/2000--Motena-oskrba-z-elektricno-energijo.aspx", 
+        "tp_brez_napetosti": {
+            "vrhnika": 2, 
+            "cerknica": 4, 
+            "logatec": 51
+        }, 
+        "odjemalci_brez_napetosti": 550, 
+        "tp_brez_napetosti_skupaj": 27
+    }, 
+    {
+        "cas": "2014-02-19T14:00:00", 
+        "datoteka": "scrape/1400--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.7", 
+        "tp_brez_napetosti": {
+            "vrhnika": 2, 
+            "cerknica": 4, 
+            "logatec": 51
+        }, 
+        "odjemalci_brez_napetosti": 550, 
+        "tp_brez_napetosti_skupaj": 27
+    }, 
+    {
+        "cas": "2014-02-19T20:00:00", 
+        "datoteka": "scrape/2000--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.11", 
+        "tp_brez_napetosti": {
+            "vrhnika": 1, 
+            "cerknica": 1, 
+            "logatec": 34
+        }, 
+        "odjemalci_brez_napetosti": 112, 
+        "tp_brez_napetosti_skupaj": 12
+    }, 
+    {
+        "cas": "2014-02-20T14:00:00", 
+        "datoteka": "scrape/1400--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.6", 
+        "tp_brez_napetosti": {
+            "vrhnika": 1, 
+            "cerknica": 1, 
+            "logatec": 12
+        }, 
+        "odjemalci_brez_napetosti": 110, 
+        "tp_brez_napetosti_skupaj": 14
+    }, 
+    {
+        "cas": "2014-02-20T20:00:00", 
+        "datoteka": "scrape/2000--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.10", 
+        "tp_brez_napetosti": {
+            "vrhnika": 1, 
+            "cerknica": 1, 
+            "logatec": 10
+        }, 
+        "odjemalci_brez_napetosti": 99, 
+        "tp_brez_napetosti_skupaj": 12
+    }, 
+    {
+        "cas": "2014-02-21T14:00:00", 
+        "datoteka": "scrape/1400--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.5", 
+        "tp_brez_napetosti": {
+            "vrhnika": 1, 
+            "cerknica": 1, 
+            "logatec": 7
+        }, 
+        "odjemalci_brez_napetosti": 50, 
+        "tp_brez_napetosti_skupaj": 9
+    }, 
+    {
+        "cas": "2014-02-21T20:00:00", 
+        "datoteka": "scrape/2000--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.9", 
+        "tp_brez_napetosti": {
+            "vrhnika": 1, 
+            "cerknica": 1, 
+            "logatec": 6
+        }, 
+        "odjemalci_brez_napetosti": 40, 
+        "tp_brez_napetosti_skupaj": 8
+    }, 
+    {
+        "cas": "2014-02-22T08:00:00", 
+        "datoteka": "scrape/0800--Motena-oskrba-z-elektricno-energijo-zaradi-vremenskih-razmer.aspx.4", 
+        "tp_brez_napetosti": {
+            "vrhnika": 1, 
+            "cerknica": 1, 
+            "logatec": 6
+        }, 
+        "odjemalci_brez_napetosti": 40, 
+        "tp_brez_napetosti_skupaj": 8
     }
 ]
