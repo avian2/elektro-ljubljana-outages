@@ -26,7 +26,7 @@ def load_slides():
 
 def n_to_rgb(n):
 	if n == 0:
-		return (220, 220, 220)
+		return (230, 230, 230)
 	else:
 		b = max(0, 200 - n*1)
 		return (200, b, b)

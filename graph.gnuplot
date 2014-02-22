@@ -98,7 +98,7 @@ set my2tics default
 set mcbtics default
 set xtics border in scale 1,0.5 mirror norotate  offset character 0, 0, 0 autojustify
 set xtics autofreq  norangelimit
-set xtics 86400
+set xtics 86400*2
 set ytics border in scale 1,0.5 mirror norotate  offset character 0, 0, 0 autojustify
 set ytics autofreq  norangelimit
 set ztics border in scale 1,0.5 nomirror norotate  offset character 0, 0, 0 autojustify
