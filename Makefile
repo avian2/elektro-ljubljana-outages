@@ -1,5 +1,3 @@
-PUBLIC="cloudsdale.tablix.org:public_html"
-
 all: publish
 
 extract.json: scrape extract.py
@@ -12,9 +10,6 @@ graph.png: graph.csv graph.gnuplot
 	gnuplot graph.gnuplot
 
 publish: graph.png animation.mp4 extract.json
-	scp graph.png $(PUBLIC)/elektro.png
-	scp animation.mp4 $(PUBLIC)/elektro_anim.mp4
-	scp extract.json $(PUBLIC)/elektro.json
 
 anim/out: anim.py anim/label.png scrape
 	rm -r anim/out
